@@ -4,6 +4,7 @@ import logging
 import time
 from datetime import timedelta
 
+from dotenv import load_dotenv
 from couchbase.auth import PasswordAuthenticator
 from couchbase.cluster import Cluster
 from couchbase.options import ClusterOptions
@@ -15,6 +16,8 @@ from langchain_core.runnables import RunnablePassthrough
 from langchain_couchbase.cache import CouchbaseCache
 from langchain_couchbase.vectorstores import CouchbaseVectorStore
 from langchain_openai import AzureChatOpenAI, AzureOpenAIEmbeddings
+
+load_dotenv()
 
 # Setup logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s', force=True)
